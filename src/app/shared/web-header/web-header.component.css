@@ -1,0 +1,28 @@
+.navbar-custom {
+    background-color: #c6c1a7;
+    /* Same beige color from the image */
+}
+
+.navbar-brand {
+    font-family: 'Serif';
+    /* Adjust the font */
+    font-size: 3rem;
+    font-weight: 400;
+    color: white;
+}
+
+.nav-link {
+    color: #fff;
+    margin-right: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    margin-left: 15px;
+}
+
+.search-bar input {
+    border-radius: 15px;
+    padding-left: 15px;
+    border: 1px solid #fff;
+}

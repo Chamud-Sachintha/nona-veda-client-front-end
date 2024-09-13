@@ -1,0 +1,18 @@
+.app__wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F8F2EA;
+    background-image: url(https://cdn.shopify.com/s/files/1/0484/1721/0518/files/texture-bg.jpg?v=1615501304);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    /* z-index: 1; */
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
