@@ -5,6 +5,7 @@ import { ClientService } from '../../../services/client/client.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Client } from '../../../shared/models/Client/client';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +19,7 @@ export class SignupComponent implements OnInit {
   addNewClientInfoForm!: FormGroup;
   clientInfoModel = new Client();
 
-  constructor (private router: Router, private clientService: ClientService, private formBuilder: FormBuilder) {}
+  constructor (private router: Router, private clientService: ClientService, private formBuilder: FormBuilder, private tostr: ToastrService) {}
 
   ngOnInit(): void {
     this.initAddNewClientInfoForm();
@@ -33,17 +34,17 @@ export class SignupComponent implements OnInit {
     const gender = this.addNewClientInfoForm.controls['gender'].value;
 
     if (firstName == "") {
-
+      this.tostr.error("Empty Field Found", "First Name is required.");
     } else if (emailAddress == "") {
-
+      this.tostr.error("Empty Field Found", "Email Address is required.");
     } else if (selectedYear == "") {
-
+      this.tostr.error("Empty Field Found", "Birth year is required.");
     } else if (selectedMonth == "") {
-
+      this.tostr.error("Empty Field Found", "Month is required.");
     } else if (selectedDay == "") {
-
+      this.tostr.error("Empty Field Found", "Day is required.");
     } else if (gender == "") {
-
+      this.tostr.error("Empty Field Found", "Gender is required.");
     } else {
       this.clientInfoModel.firstName = firstName;
       this.clientInfoModel.emailAddress = emailAddress;
@@ -55,7 +56,7 @@ export class SignupComponent implements OnInit {
         if (resp.code === 1) {
           this.router.navigate(['/app/quiz']);
         } else {
-
+          this.tostr.error("Add New Client Info", resp.message);
         }
       })
     }

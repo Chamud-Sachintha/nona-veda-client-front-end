@@ -1,0 +1,32 @@
+/* styles.css */
+body {
+    background-color: #F4ECE3;
+    font-family: 'Arial', sans-serif;
+}
+
+h2, h1, p {
+    color: #7D7D7D;
+}
+
+.vata-dominance, .pitta-dominance, .kapha-dominance {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.vata-percentage, .pitta-percentage, .kapha-percentage {
+    font-size: 2rem;
+    color: #7D7D7D;
+}
+
+img {
+    /* border: 2px solid #7D7D7D; */
+    padding: 10px;
+    max-width: 500px;
+    /* background-color: #F9F4EE; */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #7D7D7D;
+    border-radius: 50%;
+}

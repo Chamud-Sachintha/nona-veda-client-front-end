@@ -3,6 +3,7 @@ import { WebHeaderComponent } from '../../../shared/web-header/web-header.compon
 import { QuizService } from '../../../services/quiz/quiz.service';
 import { Quiz } from '../../../shared/models/Quiz/quiz';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,17 +16,31 @@ export class HomeComponent implements OnInit {
 
   quizModelList: Quiz[] = [];
   selectedQuestion: Quiz[] = [];
+  selectedAnswersList: any[] = [];
   currentQuestion = 1;
 
-  constructor (private quizService: QuizService) {}
+  constructor (private quizService: QuizService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAllQuizList();
   }
 
-  onSelectOption() {
-    if (this.quizModelList.length > this.currentQuestion) {
+  onSelectOption(answerIndex: any) {
+    this.selectedQuestion = [];
+
+    if (this.quizModelList.length >= this.currentQuestion) {
+
+      if (this.quizModelList.length > this.currentQuestion) {
+        this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
+      }
+
       this.currentQuestion += 1;
+      this.selectedAnswersList.push(answerIndex);
+    }
+
+    if (this.selectedAnswersList.length === this.quizModelList.length) {
+      localStorage.setItem("resultSet", JSON.stringify(this.selectedAnswersList));
+      this.router.navigate(['/app/results'])
     }
   }
 
@@ -38,7 +53,7 @@ export class HomeComponent implements OnInit {
           this.quizModelList.push(el);
         })
 
-        this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
+        this.selectedQuestion.push(this.quizModelList[0]);
       }
     })
   }

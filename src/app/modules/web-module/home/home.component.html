@@ -12,9 +12,9 @@
                     <p style="font-size: 25px;">{{ currentQuestion }} . {{ eachQuiz.questionName }}</p>
                 </div>
                 <div class="col-12">
-                    <div class="row mb-3" style="justify-content: center;" *ngFor="let eachAnswer of eachQuiz.answers">
+                    <div class="row mb-3" style="justify-content: center;" *ngFor="let eachAnswer of eachQuiz.answers; index as i">
                         <div class="col-5" style="background-color:  rgb(101, 56, 56); padding-top: 7px; padding-bottom: 7px; color: white;">
-                            <input type="checkbox" class="form-check-input me-2" style="background-color: grey;" (change)="onSelectOption()">
+                            <input type="checkbox" class="form-check-input me-2" style="background-color: grey;" (change)="onSelectOption(i + 1)">
                             {{ eachAnswer }}
                         </div>
                     </div>
