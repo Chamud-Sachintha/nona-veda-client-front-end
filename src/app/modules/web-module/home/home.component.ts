@@ -40,6 +40,7 @@ export class HomeComponent implements OnInit {
 
     if (this.selectedAnswersList.length === this.quizModelList.length) {
       localStorage.setItem("resultSet", JSON.stringify(this.selectedAnswersList));
+      localStorage.setItem("quizLength", this.currentQuestion.toString());
       this.router.navigate(['/app/results'])
     }
   }
