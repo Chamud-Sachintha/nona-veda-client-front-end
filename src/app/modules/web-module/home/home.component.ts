@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/app/results'])
     }
   }
-
+  
   getAllQuizList() {
     this.quizService.getQuizList().subscribe((resp: any) => {
       if (resp.code === 1) {

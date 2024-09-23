@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { QuizResponse } from '../../../shared/models/QuizResponse/quiz-response';
+import { QuizService } from '../../../services/quiz/quiz.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-result-page',
@@ -19,6 +22,14 @@ export class ResultPageComponent implements OnInit {
   pittaAnswerCount = 0;
   kappaAnswerCount = 0;
 
+  vataPercentage = 0;
+  pittaPercentage = 0;
+  kappaPercentage = 0;
+
+  quizResponseModel = new QuizResponse();
+
+  constructor(private quizService: QuizService, private tostr: ToastrService) {}
+
   ngOnInit(): void {
 
     this.selectedAnswerList = localStorage.getItem("resultSet");
@@ -37,29 +48,21 @@ export class ResultPageComponent implements OnInit {
       }
     })
 
-    var vataPercentage = (this.vataAnswerCount / parseInt(this.quizLength)) * 100;
-    var pittaPercentage = (this.pittaAnswerCount / parseInt(this.quizLength)) * 100;
-    var kappaPercentage = (this.kappaAnswerCount / parseInt(this.quizLength)) * 100;
+    this.vataPercentage = (this.vataAnswerCount / parseInt(this.quizLength)) * 100;
+    this.pittaPercentage = (this.pittaAnswerCount / parseInt(this.quizLength)) * 100;
+    this.kappaPercentage = (this.kappaAnswerCount / parseInt(this.quizLength)) * 100;
 
-    let maxValue = Math.max(vataPercentage, pittaPercentage, kappaPercentage);
+    let maxValue = Math.max(this.vataPercentage, this.pittaPercentage, this.kappaPercentage);
 
-    console.log(this.vataAnswerCount);
-    console.log(this.pittaAnswerCount);
-    console.log(this.kappaAnswerCount);
-
-    console.log(vataPercentage);
-    console.log(pittaPercentage);
-    console.log(kappaPercentage);
-
-    if (maxValue === vataPercentage) {
+    if (maxValue === this.vataPercentage) {
         this.isVataDominant = true;
         this.isPittaDominant = false;
         this.isKaphaDominant = false;
-    } else if (maxValue === pittaPercentage) {
+    } else if (maxValue === this.pittaPercentage) {
         this.isVataDominant = false;
         this.isPittaDominant = true;
         this.isKaphaDominant = false;
-    } else if (maxValue === kappaPercentage) {
+    } else if (maxValue === this.kappaPercentage) {
       this.isVataDominant = false;
       this.isPittaDominant = false;
       this.isKaphaDominant = true;
@@ -74,9 +77,25 @@ export class ResultPageComponent implements OnInit {
         getBgEl.style.backgroundImage = 'url("../../../../assets/images/vata.jpg")';
       }
     } else {
-      console.log("jjj");
       getBgEl.style.backgroundImage = 'url("../../../../assets/images/kappa.jpg")';
     }
+
+    this.submitQuizresponse();
+  }
+
+  submitQuizresponse() {
+    this.quizResponseModel.client_id = localStorage.getItem("clientId");
+    this.quizResponseModel.vataPercentage = this.vataPercentage.toString();
+    this.quizResponseModel.pittaPercentage = this.pittaPercentage.toString();
+    this.quizResponseModel.kappaPercentage = this.kappaPercentage.toString();
+
+    this.quizService.submitQuestionResponse(this.quizResponseModel).subscribe((resp: any) => {
+      if (resp.code === 1) {
+        this.tostr.success("Submit Quiz Response", "Submiting Successfully");
+      } else {
+        this.tostr.error("Error Submit the Response", resp.message);
+      }
+    })
   }
 
 }

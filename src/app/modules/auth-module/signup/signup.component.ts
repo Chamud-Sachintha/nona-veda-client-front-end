@@ -54,6 +54,11 @@ export class SignupComponent implements OnInit {
 
       this.clientService.addNewClientInfo(this.clientInfoModel).subscribe((resp: any) => {
         if (resp.code === 1) {
+          const dataList = JSON.parse(JSON.stringify(resp));
+
+          console.log(dataList)
+
+          localStorage.setItem("clientId", dataList.data[0].id);
           this.router.navigate(['/app/quiz']);
         } else {
           this.tostr.error("Add New Client Info", resp.message);
