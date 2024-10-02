@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { QuizResponse } from '../../../shared/models/QuizResponse/quiz-response';
 import { QuizService } from '../../../services/quiz/quiz.service';
 import { ToastrService } from 'ngx-toastr';
+import { CorousalComponentComponent } from '../corousal-component/corousal-component.component';
+import { KappaContentPageComponent } from '../kappa-content-page/kappa-content-page.component';
 
 @Component({
   selector: 'app-result-page',
   standalone: true,
-  imports: [],
+  imports: [KappaContentPageComponent],
   templateUrl: './result-page.component.html',
   styleUrl: './result-page.component.css'
 })
@@ -28,7 +30,8 @@ export class ResultPageComponent implements OnInit {
 
   quizResponseModel = new QuizResponse();
 
-  constructor(private quizService: QuizService, private tostr: ToastrService) {}
+  constructor(private quizService: QuizService, private tostr: ToastrService) {
+  }
 
   ngOnInit(): void {
 
@@ -80,7 +83,7 @@ export class ResultPageComponent implements OnInit {
       getBgEl.style.backgroundImage = 'url("../../../../assets/images/kappa.jpg")';
     }
 
-    this.submitQuizresponse();
+    // this.submitQuizresponse();
   }
 
   submitQuizresponse() {

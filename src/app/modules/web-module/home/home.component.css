@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 .app__wrapper {
     position: fixed;
     left: 0;
@@ -5,7 +7,7 @@
     right: 0;
     bottom: 0;
     background-color: #F8F2EA;
-    background-image: url(https://cdn.shopify.com/s/files/1/0484/1721/0518/files/texture-bg.jpg?v=1615501304);
+    background-image: url(../../../../assets/images/Dosha\ quiz-background.png);
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
