@@ -1,0 +1,107 @@
+.footer-body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3e7dc; /* Light beige background */
+    color: #54312d; /* Brownish text color */
+}
+header {
+    text-align: left;
+    padding: 20px;
+    margin-left: 50px;
+}
+header h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0;
+    color: #4b342d; /* Darker brown for the title */
+}
+header p {
+    margin: 5px 0 20px;
+    font-style: italic;
+    color: #4b342d; /* Darker brown for subtitle */
+}
+.newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.newsletter input[type="email"] {
+    padding: 10px;
+    border: 1px solid #54312d; /* Border matching the text color */
+    margin-right: 10px;
+    width: 300px;
+    font-size: 16px;
+    background-color: #fdfbf9; /* Slightly off-white input field */
+    color: #54312d; /* Text inside input */
+}
+.newsletter button {
+    padding: 10px 20px;
+    border: 1px solid #54312d; /* Button border */
+    background-color: #f3e7dc; /* Button background matching the page */
+    cursor: pointer;
+    font-size: 16px;
+    color: #54312d; /* Button text color */
+}
+.newsletter button:hover {
+    background-color: #e0d3c6; /* Slight hover effect */
+}
+.links-section {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    padding: 20px;
+    margin-top: 30px;
+}
+.links-section div {
+    margin: 0 50px;
+}
+.links-section h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #4b342d; /* Darker brown for section titles */
+}
+.links-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.links-section ul li {
+    margin-bottom: 5px;
+    color: #54312d; /* Normal text color */
+}
+footer {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #54312d; /* Divider line */
+    margin-top: 50px;
+}
+footer p {
+    margin: 5px;
+    font-size: 14px;
+    color: #54312d;
+}
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+}
+footer .footer-links a {
+    color: #54312d; /* Link color matching text */
+    text-decoration: none;
+}
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+.social-icons i {
+    font-size: 20px;
+    color: #54312d; /* Social icons color */
+}

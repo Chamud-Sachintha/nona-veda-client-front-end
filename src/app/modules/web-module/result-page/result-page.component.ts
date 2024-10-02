@@ -4,11 +4,13 @@ import { QuizService } from '../../../services/quiz/quiz.service';
 import { ToastrService } from 'ngx-toastr';
 import { CorousalComponentComponent } from '../corousal-component/corousal-component.component';
 import { KappaContentPageComponent } from '../kappa-content-page/kappa-content-page.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-result-page',
   standalone: true,
-  imports: [KappaContentPageComponent],
+  imports: [KappaContentPageComponent, CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './result-page.component.html',
   styleUrl: './result-page.component.css'
 })

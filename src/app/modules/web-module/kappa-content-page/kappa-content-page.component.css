@@ -244,3 +244,33 @@ body {
 .after-parabutton:hover {
     background-color: #8ea79a; /* Darker shade on hover */
 }
+
+/* rapel section */
+
+.r-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #f9f9f9;
+}
+.r-container {
+    border: 1px solid #d1c4c4;
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    background-color: #fff;
+}
+.r-container-h2 {
+    font-weight: bold;
+    color: #4c1b1b;
+    margin-bottom: 10px;
+}
+.r-container-p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4c1b1b;
+}
