@@ -6,11 +6,13 @@ import { CorousalComponentComponent } from '../corousal-component/corousal-compo
 import { KappaContentPageComponent } from '../kappa-content-page/kappa-content-page.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PittaContentPageComponent } from '../pitta-content-page/pitta-content-page.component';
+import { VataContentPageComponent } from '../vata-content-page/vata-content-page.component';
 
 @Component({
   selector: 'app-result-page',
   standalone: true,
-  imports: [KappaContentPageComponent, CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [KappaContentPageComponent, CommonModule, FormsModule, ReactiveFormsModule, PittaContentPageComponent, VataContentPageComponent],
   templateUrl: './result-page.component.html',
   styleUrl: './result-page.component.css'
 })
