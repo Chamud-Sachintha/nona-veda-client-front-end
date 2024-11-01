@@ -274,3 +274,10 @@ body {
     line-height: 1.5;
     color: #4c1b1b;
 }
+
+main {
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding: 2rem 0;
+  }
+  
