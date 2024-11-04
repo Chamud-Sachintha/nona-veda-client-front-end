@@ -94,7 +94,7 @@ body {
 
 .kapha-description h4 {
     font-size: 25px;
-    color: #9c9c88;
+    color: #ac3535;
     font-weight: 600;
     margin-bottom: 15px;
 }
@@ -107,27 +107,26 @@ body {
 }
 
 .kapha-image {
-    flex: 1;
-    text-align: center;
     position: relative;
-}
-
-.kapha-image img {
+    display: inline-block;
+  }
+  
+  .kapha-image img {
+    display: block;
     width: 100%;
     height: auto;
-    border-radius: 40px;
-    object-fit: cover;
-}
-
-.kapha-image h1 {
+  }
+  
+  .kapha-image h1 {
     position: absolute;
-    bottom: 30px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 36px;
-    color: #fff;
-    font-weight: bold;
-}
+    transform: translate(-50%, -50%);
+    color: white; /* Adjust text color as needed */
+    font-size: 3rem; /* Adjust font size as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional shadow for readability */
+    margin: 0;
+  }
 
 /* 2 sextion */
 
@@ -194,7 +193,7 @@ body {
 /* after para section */
 
 .afterpara-container {
-    padding: 20px;
+    padding: 40px;
 }
 
 .after-parah1 {
@@ -213,7 +212,7 @@ body {
 }
 
 .after-paraimage {
-    width: 40%; /* Adjust width of images */
+    width: 20%; /* Adjust width of images */
     border-radius: 10px;
     margin-right: 20px; /* Space between image and content */
 }

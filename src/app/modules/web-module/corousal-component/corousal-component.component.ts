@@ -32,37 +32,37 @@ export class CorousalComponentComponent implements OnInit,OnDestroy {
     blogPosts: BlogPost[] = [
         {
             id: 1,
-            title: 'The Power of Ashwagandha',
-            description: 'Discover the ancient adaptogenic herb that enhances wellness and vitality, backed by modern science and traditional wisdom.',
-            image: 'https://images.unsplash.com/photo-1512411233342-92208dfe81af?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+            title: 'Santé',
+            description: 'Les personnes Kapha ont un métabolisme lent, ce qui peut entraîner une prise de poids, une léthargie, et des troubles respiratoires. Elles sont aussi sujettes à la rétention d\'eau et aux congestions. Pour rester en bonne santé, les Kapha doivent pratiquer une activité physique régulière, consommer des aliments légers et épicés, et éviter la suralimentation et la sédentarité.',
+            image: '../../../../assets/images/sante.jpg',
             link: '/blog/ashwagandha'
         },
         {
             id: 2,
-            title: 'Turmeric: Golden Spice of Life',
-            description: 'Explore the remarkable healing properties of turmeric, from inflammation relief to cognitive enhancement.',
-            image: 'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+            title: 'Mode de vie',
+            description: 'Pour équilibrer Kapha, il est crucial de rester au chaud en portant des vêtements appropriés et en consommant des aliments réchauffants. Changer de routine aide à combattre la léthargie et la démotivation. Un sommeil régulier, avec un coucher entre 23h et minuit et un réveil entre 6h et 7h, permet de maintenir des niveaux d\'énergie optimaux. Le jeûne occasionnel peut aider à éliminer la lourdeur et à stimuler l\'appétit. L\'exercice régulier et le yoga Kapha, avec des postures spécifiques comme Natarajasana et Ustrasana, dans une ambiance apaisante, sont des actions efficaces pour équilibrer Kapha.',
+            image: '../../../../assets/images/mod.jpg',
             link: '/blog/turmeric'
         },
         {
             id: 3,
-            title: 'Healing with Holy Basil',
-            description: 'Unveil the sacred properties of Tulsi, the queen of herbs, and its profound impact on physical and spiritual well-being.',
-            image: 'https://images.unsplash.com/photo-1515516969-d4008cc6241a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+            title: 'Sommeil',
+            description: 'Vous vous endormez facilement, mais avez du mal à vous réveiller, préférant les matelas moelleux et les couvertures chaudes. Vos rêves sont souvent paisibles et chargés d’émotions. Vous avez tendance à dormir plus de huit heures, ce qui peut provoquer une sensation de lourdeur et de lenteur au réveil. Pour éviter la léthargie, il est recommandé de vous lever avant le lever du soleil et de limiter la durée de votre sommeil. Aller au lit à une heure raisonnable et se réveiller avant 6 heures du matin vous aidera à entamer la journée avec plus de légèreté et de clarté.',
+            image: '../../../../assets/images/someli.jpg',
             link: '/blog/holy-basil'
         },
         {
             id: 4,
-            title: 'Benefits of Triphala',
-            description: 'Experience the transformative power of this ancient formula for digestive health and natural detoxification.',
-            image: 'https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+            title: 'Alimentation',
+            description: 'Privilégiez des repas chauds, légers et secs, de préférence épicés, comme les cuisines mexicaine ou indienne. Les aliments légèrement cuits ou crus, ainsi que les méthodes de cuisson à sec comme le grillage ou la cuisson au four, sont idéaux. Pour stimuler votre appétit, la laitue romaine, la chicorée, et les épices comme le cumin et le curcuma sont recommandés. Il est conseillé d\'éviter les aliments sucrés, acides, salés, ainsi que les aliments surgelés et l\'eau froide. Un régime pauvre en glucides et en graisses est également favorable pour les Kaphas.',
+            image: '../../../../assets/images/alimentation.jpg',
             link: '/blog/triphala'
         },
         {
             id: 5,
-            title: 'Ayurvedic Daily Routine',
-            description: 'Transform your daily routine with ancient Ayurvedic practices for optimal health and inner harmony.',
-            image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+            title: 'Physique',
+            description: 'Vous avez un corps solide, bien bâti, avec une ossature robuste et une musculature développée. Votre peau est souvent douce et bien hydratée, vos cheveux sont épais et brillants. Vous pouvez prendre du poids assez facilement.',
+            image: '../../../../assets/images/phisi.jpg',
             link: '/blog/daily-routine'
         }
     ];

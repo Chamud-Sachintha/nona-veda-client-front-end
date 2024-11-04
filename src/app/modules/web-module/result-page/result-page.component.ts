@@ -77,14 +77,23 @@ export class ResultPageComponent implements OnInit {
 
     if (this.isPittaDominant) {
       if (getBgEl) {
-        getBgEl.style.backgroundImage = 'url("../../../../assets/images/pitta.jpg")';
+        // getBgEl.style.backgroundImage = 'url("../../../../assets/images/pitta_2.jpg")';
+        getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/pitta_2.jpg")';
+        getBgEl.style.backgroundSize = 'cover';
+        getBgEl.style.backgroundPosition = 'center';
       }
     } else if (this.isVataDominant) {
       if (getBgEl) {
-        getBgEl.style.backgroundImage = 'url("../../../../assets/images/vata.jpg")';
+        // getBgEl.style.backgroundImage = 'url("../../../../assets/images/vata_2.jpg")';
+        getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/vata_1.jpg")';
+        getBgEl.style.backgroundSize = 'cover';
+        getBgEl.style.backgroundPosition = 'center';
       }
     } else {
-      getBgEl.style.backgroundImage = 'url("../../../../assets/images/kappa.jpg")';
+      // getBgEl.style.backgroundImage = 'url("../../../../assets/images/kappa_2.jpg")';
+      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/kappa_2.jpg")';
+      getBgEl.style.backgroundSize = 'cover';
+      getBgEl.style.backgroundPosition = 'center';
     }
 
     // this.submitQuizresponse();
