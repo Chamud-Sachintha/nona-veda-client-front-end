@@ -99,6 +99,37 @@ export class ResultPageComponent implements OnInit {
     // this.submitQuizresponse();
   }
 
+  onClickNextSlide() {
+
+    var getBgEl: any = document.getElementById("bg");
+
+    if (this.isVataDominant) {
+      this.isVataDominant = false;
+      this.isKaphaDominant = false;
+      this.isPittaDominant = true;
+
+      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/pitta_2.jpg")';
+      getBgEl.style.backgroundSize = 'cover';
+      getBgEl.style.backgroundPosition = 'center';
+    } else if (this.isPittaDominant) {
+      this.isVataDominant = false;
+      this.isKaphaDominant = true;
+      this.isPittaDominant = false;
+
+      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/kappa_2.jpg")';
+      getBgEl.style.backgroundSize = 'cover';
+      getBgEl.style.backgroundPosition = 'center';
+    } else {
+      this.isVataDominant = true;
+      this.isKaphaDominant = false;
+      this.isPittaDominant = false;
+
+      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/vata_1.jpg")';
+      getBgEl.style.backgroundSize = 'cover';
+      getBgEl.style.backgroundPosition = 'center';
+    }
+  }
+
   submitQuizresponse() {
     this.quizResponseModel.client_id = localStorage.getItem("clientId");
     this.quizResponseModel.vataPercentage = this.vataPercentage.toString();

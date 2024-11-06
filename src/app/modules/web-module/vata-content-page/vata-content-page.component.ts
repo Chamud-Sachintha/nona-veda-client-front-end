@@ -14,7 +14,7 @@ export class VataContentPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
 }
