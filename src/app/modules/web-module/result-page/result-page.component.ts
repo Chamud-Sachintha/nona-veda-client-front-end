@@ -34,6 +34,20 @@ export class ResultPageComponent implements OnInit {
 
   quizResponseModel = new QuizResponse();
 
+  currentIndex = 0;
+
+  dominantTypes = [
+    { name: 'Vata', image: '../../../../assets/images/vata_1.jpg' },
+    { name: 'Pitta', image: '../../../../assets/images/pitta_2.jpg' },
+    { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg' }
+  ];
+
+  dominantTypesRev = [
+    { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg' },
+    { name: 'Vata', image: '../../../../assets/images/vata_1.jpg' },
+    { name: 'Pitta', image: '../../../../assets/images/pitta_2.jpg' },
+  ];
+
   constructor(private quizService: QuizService, private tostr: ToastrService) {
   }
 
@@ -99,35 +113,40 @@ export class ResultPageComponent implements OnInit {
     // this.submitQuizresponse();
   }
 
-  onClickNextSlide() {
-
-    var getBgEl: any = document.getElementById("bg");
-
-    if (this.isVataDominant) {
-      this.isVataDominant = false;
-      this.isKaphaDominant = false;
-      this.isPittaDominant = true;
-
-      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/pitta_2.jpg")';
-      getBgEl.style.backgroundSize = 'cover';
-      getBgEl.style.backgroundPosition = 'center';
-    } else if (this.isPittaDominant) {
-      this.isVataDominant = false;
-      this.isKaphaDominant = true;
-      this.isPittaDominant = false;
-
-      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/kappa_2.jpg")';
-      getBgEl.style.backgroundSize = 'cover';
-      getBgEl.style.backgroundPosition = 'center';
-    } else {
-      this.isVataDominant = true;
-      this.isKaphaDominant = false;
-      this.isPittaDominant = false;
-
-      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/vata_1.jpg")';
-      getBgEl.style.backgroundSize = 'cover';
-      getBgEl.style.backgroundPosition = 'center';
+  onClickPrevSlide() {
+    const getBgEl = document.getElementById("bg");
+  
+    if (!getBgEl) {
+      console.error("Background element not found");
+      return;
     }
+
+    this.currentIndex = (this.currentIndex - 1 + this.dominantTypesRev.length) % this.dominantTypesRev.length;
+  
+    const currentType = this.dominantTypesRev[this.currentIndex];
+
+    this.setBackground(getBgEl, currentType.image);
+  }
+
+  onClickNextSlide() {
+    const getBgEl = document.getElementById("bg");
+  
+    if (!getBgEl) {
+      console.error("Background element not found");
+      return;
+    }
+
+    const currentType = this.dominantTypes[this.currentIndex];
+    this.setBackground(getBgEl, currentType.image);
+
+    this.currentIndex = (this.currentIndex + 1) % this.dominantTypes.length;
+  }
+  
+  // Helper method to set the background style
+  setBackground(element: HTMLElement, imageUrl: string) {
+    element.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${imageUrl}")`;
+    element.style.backgroundSize = 'cover';
+    element.style.backgroundPosition = 'center';
   }
 
   submitQuizresponse() {
