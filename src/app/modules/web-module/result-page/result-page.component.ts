@@ -160,11 +160,6 @@ export class ResultPageComponent implements OnInit {
       this.currentIndex = 1;
     }
 
-    // this.currentIndex = (this.currentIndex - 1 + this.dominantTypes.length) % this.dominantTypes.length;
-  
-    // const currentType = this.dominantTypes[this.currentIndex];
-
-    // this.setBackground(getBgEl, currentType.image);
     const currentType = this.dominantTypes[this.currentIndex];
     this.setBackground(getBgEl, currentType.image);
 
