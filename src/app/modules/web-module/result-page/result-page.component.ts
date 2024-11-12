@@ -24,6 +24,10 @@ export class ResultPageComponent implements OnInit {
   isKaphaDominant = false;
   isPittaDominant = false;
 
+  showVata = false;
+  showPitta = false;
+  showKappa = false;
+
   vataAnswerCount = 0;
   pittaAnswerCount = 0;
   kappaAnswerCount = 0;
@@ -37,9 +41,9 @@ export class ResultPageComponent implements OnInit {
   currentIndex = 0;
 
   dominantTypes = [
-    { name: 'Vata', image: '../../../../assets/images/vata_1.jpg' },
-    { name: 'Pitta', image: '../../../../assets/images/pitta_2.jpg' },
-    { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg' }
+    { name: 'Vata', image: '../../../../assets/images/vata_1.jpg', index: 0 },
+    { name: 'Pitta', image: '../../../../assets/images/pitta_2.jpg', index: 1 },
+    { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg', index:2 }
   ];
 
   dominantTypesRev = [
@@ -79,14 +83,26 @@ export class ResultPageComponent implements OnInit {
         this.isVataDominant = true;
         this.isPittaDominant = false;
         this.isKaphaDominant = false;
+
+        this.showVata = true;
+        this.showPitta = false;
+        this.showKappa = false;
     } else if (maxValue === this.pittaPercentage) {
         this.isVataDominant = false;
         this.isPittaDominant = true;
         this.isKaphaDominant = false;
+
+        this.showPitta = true;
+        this.showKappa = false;
+        this.showVata = false;
     } else if (maxValue === this.kappaPercentage) {
       this.isVataDominant = false;
       this.isPittaDominant = false;
       this.isKaphaDominant = true;
+
+      this.showKappa = true;
+      this.showPitta = false;
+      this.showVata = false;
     }
 
     if (this.isPittaDominant) {
@@ -95,6 +111,8 @@ export class ResultPageComponent implements OnInit {
         getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/pitta_2.jpg")';
         getBgEl.style.backgroundSize = 'cover';
         getBgEl.style.backgroundPosition = 'center';
+
+        this.currentIndex = 1;
       }
     } else if (this.isVataDominant) {
       if (getBgEl) {
@@ -102,12 +120,16 @@ export class ResultPageComponent implements OnInit {
         getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/vata_1.jpg")';
         getBgEl.style.backgroundSize = 'cover';
         getBgEl.style.backgroundPosition = 'center';
+
+        this.currentIndex = 0;
       }
     } else {
       // getBgEl.style.backgroundImage = 'url("../../../../assets/images/kappa_2.jpg")';
       getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/kappa_2.jpg")';
       getBgEl.style.backgroundSize = 'cover';
       getBgEl.style.backgroundPosition = 'center';
+
+      this.currentIndex = 2;
     }
 
     // this.submitQuizresponse();
@@ -121,11 +143,32 @@ export class ResultPageComponent implements OnInit {
       return;
     }
 
-    this.currentIndex = (this.currentIndex - 1 + this.dominantTypesRev.length) % this.dominantTypesRev.length;
-  
-    const currentType = this.dominantTypesRev[this.currentIndex];
+    if (this.showKappa) {
+      this.showKappa = false;
+      this.showVata = true;
 
+      this.currentIndex = 0;
+    } else if (this.showPitta) {
+      this.showPitta = false;
+      this.showKappa = true;
+
+      this.currentIndex = 2;
+    } else {
+      this.showVata = false;
+      this.showPitta = true;
+
+      this.currentIndex = 1;
+    }
+
+    // this.currentIndex = (this.currentIndex - 1 + this.dominantTypes.length) % this.dominantTypes.length;
+  
+    // const currentType = this.dominantTypes[this.currentIndex];
+
+    // this.setBackground(getBgEl, currentType.image);
+    const currentType = this.dominantTypes[this.currentIndex];
     this.setBackground(getBgEl, currentType.image);
+
+    this.currentIndex = (this.currentIndex + 1) % this.dominantTypes.length;
   }
 
   onClickNextSlide() {
@@ -136,6 +179,23 @@ export class ResultPageComponent implements OnInit {
       return;
     }
 
+    if (this.showKappa) {
+      this.showPitta = true;
+      this.showKappa = false;
+
+      this.currentIndex = 1;
+    } else if (this.showPitta) {
+      this.showPitta = false;
+      this.showVata = true;
+
+      this.currentIndex = 0;
+    } else {
+      this.showVata = false;
+      this.showKappa = true;
+
+      this.currentIndex = 2;
+    }
+    
     const currentType = this.dominantTypes[this.currentIndex];
     this.setBackground(getBgEl, currentType.image);
 

@@ -9,35 +9,36 @@
         <!-- Bootstrap Carousel for 3 Doshas -->
         <div id="doshaCarousel" class="carousel slide" data-bs-interval="false">
             <div class="carousel-inner">
-                <!-- VATA Slide -->
-                <div class="carousel-item" [class.active]="!isKaphaDominant && !isPittaDominant">
+                <!-- KAPHA Slide -->
+                <div class="carousel-item" [class.active]="isKaphaDominant">
                     <div class="row align-items-center">
-                        <!-- Pitta on the left -->
+                        <!-- Vata on the left -->
                         <div class="col-2 text-center">
-                            <h2>PITTA</h2>
-                            <p>15%</p>
+                            <h2>VATA</h2>
+                            <p>70%</p>
                         </div>
-                        <!-- Vata in the center -->
+                        <!-- Kapha in the center -->
                         <div class="col-8">
                             <div class="row">
                                 <div class="col">
-                                    <h1 class="vata-dominance">VATA</h1>
-                                    <p class="vata-percentage">70%</p>
+                                    <h1 class="kapha-dominance">KAPHA</h1>
+                                    <p class="kapha-percentage">15%</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <img src="../../../../assets/images/EGERIE_RVB.png" alt="Vata Portrait" class="img-fluid">
+                                    <img src="../../../../assets/images/EGERIE_RVB.png" alt="Kapha Portrait" class="img-fluid">
                                 </div>
                             </div>
                         </div>
-                        <!-- Kapha on the right -->
+                        <!-- Pitta on the right -->
                         <div class="col-2 text-center">
-                            <h2>KAPHA</h2>
+                            <h2>PITTA</h2>
                             <p>15%</p>
                         </div>
                     </div>
                 </div>
+                
     
                 <!-- PITTA Slide -->
                 <div class="carousel-item" [class.active]="isPittaDominant">
@@ -69,31 +70,31 @@
                     </div>
                 </div>
     
-                <!-- KAPHA Slide -->
-                <div class="carousel-item" [class.active]="isKaphaDominant">
+                <!-- VATA Slide -->
+                <div class="carousel-item" [class.active]="!isKaphaDominant && !isPittaDominant">
                     <div class="row align-items-center">
-                        <!-- Vata on the left -->
+                        <!-- Pitta on the left -->
                         <div class="col-2 text-center">
-                            <h2>VATA</h2>
-                            <p>70%</p>
+                            <h2>PITTA</h2>
+                            <p>15%</p>
                         </div>
-                        <!-- Kapha in the center -->
+                        <!-- Vata in the center -->
                         <div class="col-8">
                             <div class="row">
                                 <div class="col">
-                                    <h1 class="kapha-dominance">KAPHA</h1>
-                                    <p class="kapha-percentage">15%</p>
+                                    <h1 class="vata-dominance">VATA</h1>
+                                    <p class="vata-percentage">70%</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <img src="../../../../assets/images/EGERIE_RVB.png" alt="Kapha Portrait" class="img-fluid">
+                                    <img src="../../../../assets/images/EGERIE_RVB.png" alt="Vata Portrait" class="img-fluid">
                                 </div>
                             </div>
                         </div>
-                        <!-- Pitta on the right -->
+                        <!-- Kapha on the right -->
                         <div class="col-2 text-center">
-                            <h2>PITTA</h2>
+                            <h2>KAPHA</h2>
                             <p>15%</p>
                         </div>
                     </div>
