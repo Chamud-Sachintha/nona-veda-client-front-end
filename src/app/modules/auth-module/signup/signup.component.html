@@ -5,22 +5,23 @@
             <!-- First and Email Input Row -->
             <div class="form-row">
                 <div class="col-md-6">
-                    <label for="first-name">WHAT IS YOUR FIRST NAME?</label>
-                    <input type="text" class="custom-input" id="first-name" placeholder="First name" formControlName="firstName">
+                    <label for="first-name" style="text-align: left; color: #260E0A">Quel est votre prénom ?</label>
+                    <input type="text" class="custom-input" id="first-name" placeholder="Prénom" formControlName="firstName" style="border-color: #260E0A; background-color:transparent">
                 </div>
                 <div class="col-md-6">
-                    <label for="email">WHAT IS YOUR EMAIL ADDRESS?</label>
-                    <input type="email" class="custom-input" id="email" placeholder="Your email" formControlName="emailAddress">
+                    <label for="email" style="text-align: left; color: #260E0A">Quel est votre mail ?</label>
+                    <input type="email" class="custom-input" id="email" placeholder="Adresse mail" formControlName="emailAddress" style="border-color: #260E0A; background-color:transparent">
                 </div>
             </div>
 
             <!-- Date of Birth and Identification Row -->
             <div class="form-row">
                 <div class="col-md-6">
-                    <label>WHAT IS YOUR DATE OF BIRTH?</label>
+                    <label style="text-align: left; color: #260E0A">Quel est votre date de naissance?</label>
                     <div class="d-flex justify-content-between">
-                        <select class="custom-select me-2" formControlName="selectedMonth">
-                            <option selected>Month</option>
+                        <select class="custom-select me-2" formControlName="selectedMonth" style="border-color: #260E0A; background-color:transparent">
+                            <option value="" disabled selected hidden class="placeholder">Month</option>
+                            <!-- <option selected>Month</option> -->
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
@@ -35,8 +36,8 @@
                             <option value="12">December</option>
                             <!-- Add more months -->
                         </select>
-                        <select class="custom-select me-2" formControlName="selectedDay">
-                            <option selected>Day</option>
+                        <select class="custom-select me-2" formControlName="selectedDay" style="border-color: #260E0A; background-color:transparent">
+                            <option value="" disabled selected hidden class="placeholder">Day</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -70,8 +71,8 @@
                             <option value="31">31</option>
                             <!-- Add more days -->
                         </select>
-                        <select class="custom-select" formControlName="selectedYear">
-                            <option selected>Year</option>
+                        <select class="custom-select" formControlName="selectedYear" style="border-color: #260E0A; background-color:transparent">
+                            <option value="" disabled selected hidden class="placeholder">Year</option>
                             <option value="1990">1990</option>
                             <option value="1991">1991</option>
                             <option value="1992">1992</option>
@@ -113,9 +114,9 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="identify">HOW DO YOU IDENTIFY?</label>
-                    <select class="custom-select" id="identify" formControlName="gender">
-                        <option selected>Select One</option>
+                    <label for="identify" style="text-align: left; color: #260E0A;">Quel est votre sexe ?</label>
+                    <select class="custom-select" id="identify" formControlName="gender" style="border-color: #260E0A; background-color:transparent">
+                        <option value="" disabled selected hidden class="placeholder">Genre</option>
                         <option>Male</option>
                         <option>Female</option>
                         <option>Other</option>
@@ -125,7 +126,7 @@
 
             <!-- Continue Button -->
             <div class="continue-btn">
-                <button type="submit" class="btn btn-custom">Continue <i
+                <button type="submit" class="btn-custom">CONTINUER <i
                         class="bi bi-arrow-right"></i></button>
             </div>
         </form>

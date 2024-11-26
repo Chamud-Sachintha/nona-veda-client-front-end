@@ -131,6 +131,25 @@ body {
 	font-size: 0.95rem;
 }
 
+.btn {
+    padding: 0.75rem 2rem;
+    background-color: #dc3545;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn:hover {
+    background-color: #b8860b;
+    color: rgb(128, 33, 33);
+}
+
 .carousel-controls {
 	display: flex;
 	align-items: center;

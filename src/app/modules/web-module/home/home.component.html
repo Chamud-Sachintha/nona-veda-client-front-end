@@ -4,16 +4,16 @@
         <div class="col-12">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3 style="font-weight: bolder; font-style: italic;">DOSHA QUIZ</h3>
+                    <h2 style="font-weight: bolder; font-style: italic;">DOSHA QUIZ</h2>
                 </div>
             </div>
             <div class="row mt-3" *ngFor="let eachQuiz of this.selectedQuestion;">
                 <div class="col-12 text-center">
-                    <p style="font-size: 25px;">{{ currentQuestion }} . {{ eachQuiz.questionName }}</p>
+                    <p style="font-size: 30px;">{{ currentQuestion }} . {{ eachQuiz.questionName }}</p>
                 </div>
                 <div class="col-12">
                     <div class="row mb-3" style="justify-content: center;" *ngFor="let eachAnswer of eachQuiz.answers; index as i">
-                        <div class="col-5" style="background-color:  rgb(101, 56, 56); padding-top: 7px; padding-bottom: 7px; color: white;">
+                        <div class="col-5" style="background-color:  #260E0A; padding-top: 9px; padding-bottom: 9px; color: white; font-size: 18px;">
                             <input type="checkbox" class="form-check-input me-2" style="background-color: grey;" (change)="onSelectOption(i + 1)">
                             {{ eachAnswer }}
                         </div>

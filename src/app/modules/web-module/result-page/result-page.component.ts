@@ -46,12 +46,6 @@ export class ResultPageComponent implements OnInit {
     { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg', index:2 }
   ];
 
-  dominantTypesRev = [
-    { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg' },
-    { name: 'Vata', image: '../../../../assets/images/vata_1.jpg' },
-    { name: 'Pitta', image: '../../../../assets/images/pitta_2.jpg' },
-  ];
-
   constructor(private quizService: QuizService, private tostr: ToastrService) {
   }
 

@@ -119,6 +119,25 @@ body {
 	letter-spacing: 0.5px;
 }
 
+.btn {
+    padding: 0.75rem 2rem;
+    background-color: #C16A4C;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.btn:hover {
+    background-color: #C16A4C;
+    color: white;
+}
+
 .card-content p {
 	margin: 0 0 2rem;
 	flex-grow: 1;
