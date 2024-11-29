@@ -1,28 +1,206 @@
-.navbar-custom {
-    background-color: #c6c1a7;
-    /* Same beige color from the image */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.navbar-brand {
-    font-family: 'Serif';
-    /* Adjust the font */
-    font-size: 3rem;
-    font-weight: 400;
+/* body {
+    font-family: 'Spectral', serif;
+    background-color: #B7B49E;
     color: white;
+} */
+
+#qodef-page-header {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    height: 106px;
+    background-color: #B7B49E;
+    z-index: 10000;
+    padding-left: 5%;
+    padding-right: 5%;
 }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 106px;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 
 .nav-link {
-    color: #fff;
-    margin-right: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    line-height: 1.91em;
+    padding: 1em 0;
+}
+
+.nav-link:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 1px;
+    width: 0;
+    bottom: calc(50% - 1px);
+    left: 0;
+    background: currentColor;
+    transition: width 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* Submenu Styles */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #B7B49E;
+    min-width: 200px;
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.712);
+}
+
+.nav-item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu-link {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Spectral', serif;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4em;
+    letter-spacing: .025em;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submenu-link:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    height: 1px;
+    width: 0;
+    bottom: 50%;
+    left: 2rem;
+    background: currentColor;
+    transition: width 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.submenu-link:hover:after {
+    width: calc(100% - 4rem);
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img {
+    height: 45px;
+    object-fit: contain;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    position: relative;
+}
+
+.search-box input {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 7px 50px 8px 17px;
+    font-family: 'Spectral', serif;
+    width: 200px;
+    font-size: 0.9rem;
+}
+
+.search-box input::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.search-btn {
+    position: absolute;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    height: 100%;
+    width: 35px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.cart-icon {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.cart-count {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-family: 'Spectral', serif;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
 }
 
 .social-icons a {
-    color: #fff;
-    margin-left: 15px;
-}
-
-.search-bar input {
-    border-radius: 15px;
-    padding-left: 15px;
-    border: 1px solid #fff;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
 }

@@ -135,7 +135,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 50px;
-    background-color: #b8b09b;
+    background-color: #B7B49E;
 }
 .h1op {
     text-align: center;
@@ -174,7 +174,7 @@ body {
 .p-body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #b8b09b; /* Light background color */
+    background-color: #B7B49E; /* Light background color */
 }
 
 .p-container {
@@ -233,7 +233,7 @@ body {
 }
 
 .after-parabutton {
-    background-color: #a8bca1; /* Button background color */
+    background-color: #B7B49E; /* Button background color */
     color: #fff; /* White text color for button */
     padding: 10px 20px;
     text-decoration: none;
@@ -242,7 +242,7 @@ body {
 }
 
 .after-parabutton:hover {
-    background-color: #8ea79a; /* Darker shade on hover */
+    background-color: #B7B49E; /* Darker shade on hover */
 }
 
 /* rapel section */

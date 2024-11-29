@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PittaContentPageComponent } from '../pitta-content-page/pitta-content-page.component';
 import { VataContentPageComponent } from '../vata-content-page/vata-content-page.component';
+import { WebHeaderComponent } from '../../../shared/web-header/web-header.component';
 
 @Component({
   selector: 'app-result-page',
   standalone: true,
-  imports: [KappaContentPageComponent, CommonModule, FormsModule, ReactiveFormsModule, PittaContentPageComponent, VataContentPageComponent],
+  imports: [KappaContentPageComponent, CommonModule, FormsModule, ReactiveFormsModule, PittaContentPageComponent, VataContentPageComponent, WebHeaderComponent],
   templateUrl: './result-page.component.html',
   styleUrl: './result-page.component.css'
 })
