@@ -44,6 +44,11 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/app/results'])
     }
   }
+
+  onClickPrevButton() {
+    this.currentQuestion -= 1;
+    this.selectedAnswersList.pop();
+  }
   
   getAllQuizList() {
     this.quizService.getQuizList().subscribe((resp: any) => {

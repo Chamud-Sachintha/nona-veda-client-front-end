@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener  } from '@angular/core';
 import { QuizResponse } from '../../../shared/models/QuizResponse/quiz-response';
 import { QuizService } from '../../../services/quiz/quiz.service';
 import { ToastrService } from 'ngx-toastr';
@@ -46,6 +46,10 @@ export class ResultPageComponent implements OnInit {
     { name: 'Pitta', image: '../../../../assets/images/pitta_2.jpg', index: 1 },
     { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg', index:2 }
   ];
+
+  backToTopButton:any = null;
+
+  // HostListener:('window:scroll', [])
 
   constructor(private quizService: QuizService, private tostr: ToastrService) {
   }
@@ -127,7 +131,32 @@ export class ResultPageComponent implements OnInit {
       this.currentIndex = 2;
     }
 
+    this.backToTopButton = document.getElementById('backToTop');
+    console.log(this.backToTopButton)
+    if (!this.backToTopButton) {
+        console.error('Back to top button not found!');
+        return;
+    }
+
+    window.addEventListener('scroll', this.toggleBackToTop.bind(this));
+    this.backToTopButton.addEventListener('click', this.scrollToTop.bind(this));
+
     // this.submitQuizresponse();
+  }
+
+  toggleBackToTop() {
+    if (window.pageYOffset > 300) {
+        this.backToTopButton.classList.add('visible');
+    } else {
+        this.backToTopButton.classList.remove('visible');
+    }
+  }
+
+  scrollToTop() {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+      });
   }
 
   onClickPrevSlide() {

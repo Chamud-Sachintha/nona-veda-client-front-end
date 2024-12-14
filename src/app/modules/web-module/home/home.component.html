@@ -22,6 +22,9 @@
                 <div class="col-12 text-center">
                     <label for="">{{ currentQuestion }} / {{ this.quizModelList.length }}</label>
                 </div>
+                <div class="col-12 text-center mt-3" *ngIf="this.currentQuestion > 1">
+                    <button class="btn btn-primary btn-sm" style="background-color: #260E0A;" (click)="onClickPrevButton()">Previous</button>
+                </div>
             </div>
         </div>
     </div>

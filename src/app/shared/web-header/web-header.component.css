@@ -79,7 +79,7 @@
 /* Submenu Styles */
 .submenu {
     position: absolute;
-    top: 100%;
+    top: 79px;
     left: 0;
     background-color: #B7B49E;
     min-width: 200px;
