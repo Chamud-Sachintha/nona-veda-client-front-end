@@ -95,8 +95,10 @@
                         </div>
                         <!-- Kapha on the right -->
                         <div class="col-2 text-center">
-                            <h2>KAPHA</h2>
-                            <p>15%</p>
+                            <div style="margin-left: -45px;">
+                                <h2>KAPHA</h2>
+                                <p>15%</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,9 +116,11 @@
         </div>
     </div>
 </div>
-<app-kappa-content-page *ngIf="showKappa"></app-kappa-content-page>
-<app-pitta-content-page *ngIf="showPitta"></app-pitta-content-page>
-<app-vata-content-page *ngIf="showVata"></app-vata-content-page>
+<div style="overflow-x: hidden;">
+    <app-kappa-content-page *ngIf="showKappa"></app-kappa-content-page>
+    <app-pitta-content-page *ngIf="showPitta"></app-pitta-content-page>
+    <app-vata-content-page *ngIf="showVata"></app-vata-content-page>
+</div>
 <button id="backToTop" class="back-to-top" aria-label="Back to top">
     <span class="back-to-top-icon">
         <svg class="qodef-predefined" viewBox="2.75 4.499 18.583 61.502" xmlns="http://www.w3.org/2000/svg">
