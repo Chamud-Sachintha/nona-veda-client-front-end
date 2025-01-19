@@ -1,4 +1,4 @@
-<header id="qodef-page-header" style="position: fixed;">
+<!-- <header id="qodef-page-header" style="position: fixed;">
     <nav class="navbar">
         <div class="nav-left">
             <div class="nav-item">
@@ -39,4 +39,58 @@
             </div>
         </div>
     </nav>
-</header>
+</header> -->
+
+<header id="qodef-page-header" [class.mobile-open]="isMobileMenuOpen">
+    <nav class="navbar">
+      <button class="hamburger" (click)="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="logo">
+        <a href="https://nonaveda.com/" rel="noopener">
+          <img src="https://nonaveda.com/wp-content/uploads/2024/11/white-logo-nonaveda.png" alt="Nona Veda">
+        </a>
+      </div>
+
+      <div class="nav-left" [class.active]="isMobileMenuOpen">
+        <div class="nav-item">
+          <a href="#" class="nav-link" (click)="toggleSubmenu($event)">LA BOUTIQUE</a>
+          <div class="submenu" [class.active]="isSubmenuOpen">
+            <a href="https://nonaveda.com/accessoires/" class="submenu-link">Accessoires</a>
+            <a href="https://nonaveda.com/beaute/" class="submenu-link">Beauté</a>
+            <a href="https://nonaveda.com/herbes/" class="submenu-link">Herbes</a>
+          </div>
+        </div>
+        <a href="https://nonaveda.com/dosha-quiz/" class="nav-link">DOSHA QUIZ</a>
+        <a href="https://nonaveda.com/blog-no-sidebar/" class="nav-link">BLOG</a>
+        <a href="https://nonaveda.com/product/e-book/" class="nav-link">E-BOOK</a>
+      </div>
+
+      <div class="nav-right" [class.active]="isMobileMenuOpen">
+        <div class="search-box">
+          <input type="text" placeholder="Rechercher">
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <a href="https://nonaveda.com/cart-2/" class="cart-icon">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count">(0)</span>
+        </a>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/profile.php?id=61561119542843">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/nonaveda.fr/">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@nonaveda">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>

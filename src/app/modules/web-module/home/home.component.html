@@ -1,4 +1,5 @@
-<app-web-header></app-web-header>
+<app-web-header id="qodef-page-header"></app-web-header>
+
 <div class="app__wrapper align-items-center">
     <div class="row" style="margin-top: 130px;">
         <div class="col-12">
@@ -9,7 +10,7 @@
             </div>
             <div class="row mt-3" *ngFor="let eachQuiz of this.selectedQuestion;">
                 <div class="col-12 text-center">
-                    <p style="font-size: 30px;">{{ currentQuestion }} . {{ eachQuiz.questionName }}</p>
+                    <p style="font-size: 30px;">{{ currentQuestion + 1 }} . {{ eachQuiz.questionName }}</p>
                 </div>
                 <div class="col-12">
                     <div class="row mb-3" style="justify-content: center;" *ngFor="let eachAnswer of eachQuiz.answers; index as i">
@@ -20,9 +21,9 @@
                     </div>
                 </div>
                 <div class="col-12 text-center">
-                    <label for="">{{ currentQuestion }} / {{ this.quizModelList.length }}</label>
+                    <label for="">{{ currentQuestion + 1 }} / {{ this.quizModelList.length }}</label>
                 </div>
-                <div class="col-12 text-center mt-3" *ngIf="this.currentQuestion > 1">
+                <div class="col-12 text-center mt-3" *ngIf="this.currentQuestion >= 1">
                     <button class="btn btn-primary btn-sm" style="background-color: #260E0A;" (click)="onClickPrevButton()">Previous</button>
                 </div>
             </div>

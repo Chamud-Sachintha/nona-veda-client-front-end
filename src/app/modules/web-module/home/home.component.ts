@@ -4,11 +4,12 @@ import { QuizService } from '../../../services/quiz/quiz.service';
 import { Quiz } from '../../../shared/models/Quiz/quiz';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { MobileHeaderComponent } from '../../../shared/mobile-header/mobile-header.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [WebHeaderComponent, CommonModule],
+  imports: [WebHeaderComponent, CommonModule, MobileHeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -17,7 +18,9 @@ export class HomeComponent implements OnInit {
   quizModelList: Quiz[] = [];
   selectedQuestion: Quiz[] = [];
   selectedAnswersList: any[] = [];
-  currentQuestion = 1;
+  currentQuestion = 0;
+
+  anserIndexSelected = 0;
 
   constructor (private quizService: QuizService, private router: Router) {}
 
@@ -27,6 +30,9 @@ export class HomeComponent implements OnInit {
 
   onSelectOption(answerIndex: any) {
     this.selectedQuestion = [];
+    this.currentQuestion += 1;
+
+    this.anserIndexSelected = answerIndex;
 
     if (this.quizModelList.length >= this.currentQuestion) {
 
@@ -34,7 +40,7 @@ export class HomeComponent implements OnInit {
         this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
       }
 
-      this.currentQuestion += 1;
+      // this.currentQuestion += 1;
       this.selectedAnswersList.push(answerIndex);
     }
 
@@ -46,8 +52,12 @@ export class HomeComponent implements OnInit {
   }
 
   onClickPrevButton() {
+    this.selectedQuestion = [];
     this.currentQuestion -= 1;
     this.selectedAnswersList.pop();
+
+    this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
+
   }
   
   getAllQuizList() {
@@ -59,7 +69,7 @@ export class HomeComponent implements OnInit {
           this.quizModelList.push(el);
         })
 
-        this.selectedQuestion.push(this.quizModelList[0]);
+        this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
       }
     })
   }

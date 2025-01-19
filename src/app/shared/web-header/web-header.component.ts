@@ -8,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './web-header.component.css'
 })
 export class WebHeaderComponent {
+  isMobileMenuOpen = false;
+  isSubmenuOpen = false;
 
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    if (!this.isMobileMenuOpen) {
+      this.isSubmenuOpen = false;
+    }
+  }
+
+  toggleSubmenu(event: Event) {
+    event.preventDefault();
+    if (window.innerWidth <= 768) {
+      this.isSubmenuOpen = !this.isSubmenuOpen;
+    }
+  }
 }
