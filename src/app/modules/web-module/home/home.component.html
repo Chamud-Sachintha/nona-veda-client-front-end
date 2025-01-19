@@ -1,20 +1,20 @@
 <app-web-header></app-web-header>
 
 <div class="app__wrapper align-items-center">
-    <div class="row" style="margin-top: 130px;">
+    <div class="row" style="margin-top: 100px;">
         <div class="col-12">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h2 style="font-weight: bolder; font-style: italic;">DOSHA QUIZ</h2>
+                    <h2 style="font-weight: bolder;">DOSHA QUIZ</h2>
                 </div>
             </div>
-            <div class="row mt-3" *ngFor="let eachQuiz of this.selectedQuestion;">
+            <div class="row mt-3" *ngFor="let eachQuiz of this.selectedQuestion;" style="margin-left: 20px; margin-right: 20px;">
                 <div class="col-12 text-center">
                     <p style="font-size: 30px;">{{ currentQuestion + 1 }} . {{ eachQuiz.questionName }}</p>
                 </div>
                 <div class="col-12">
                     <div class="row mb-3" style="justify-content: center;" *ngFor="let eachAnswer of eachQuiz.answers; index as i">
-                        <div class="col-5" style="background-color:  #260E0A; padding-top: 9px; padding-bottom: 9px; color: white; font-size: 18px;">
+                        <div class="col-8" style="background-color:  #260E0A; padding-top: 9px; padding-bottom: 9px; color: white; font-size: 18px;">
                             <input type="checkbox" class="form-check-input me-2" style="background-color: grey;" (change)="onSelectOption(i + 1)">
                             {{ eachAnswer }}
                         </div>
@@ -23,7 +23,7 @@
                 <div class="col-12 text-center">
                     <label for="">{{ currentQuestion + 1 }} / {{ this.quizModelList.length }}</label>
                 </div>
-                <div class="col-12 text-center mt-3" *ngIf="this.currentQuestion >= 1">
+                <div class="col-12 text-center mt-3" *ngIf="this.currentQuestion >= 1" >
                     <button class="btn btn-primary btn-sm" style="background-color: #260E0A;" (click)="onClickPrevButton()">Previous</button>
                 </div>
             </div>
