@@ -147,9 +147,21 @@ body {
     justify-content: space-between;
 }
 .trait {
-    width: 30%;
+    /* width: 30%; */
     text-align: center;
     color: #d9cbb6;
+    padding: 20px;
+}
+.trait-border {
+    border-right: 1px solid white;
+}
+
+@media (max-width: 768px) {
+    .trait-border {
+        border-right: transparent;
+        border-bottom: 1px solid white;
+    }
+
 }
 .trait img {
     max-width: 50px;
@@ -212,7 +224,7 @@ body {
 }
 
 .after-paraimage {
-    width: 20%; /* Adjust width of images */
+    width: 100%; /* Adjust width of images */
     border-radius: 10px;
     margin-right: 20px; /* Space between image and content */
 }
