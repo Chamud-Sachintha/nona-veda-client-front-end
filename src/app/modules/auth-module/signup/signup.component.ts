@@ -78,8 +78,16 @@ export class SignupComponent implements OnInit {
     })
   }
 
-  onClickContinue() {
-    
+  validateEmail() {
+    const emailAddress = this.addNewClientInfoForm.controls['emailAddress'].value;
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (emailAddress && !emailPattern.test(emailAddress)) {
+      this.tostr.error("Invalid Email Address", "Please enter a valid email address.");
+      return false;
+    }
+
+    return true;
   }
 
 }

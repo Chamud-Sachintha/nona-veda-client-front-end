@@ -22,44 +22,55 @@ export class HomeComponent implements OnInit {
 
   anserIndexSelected = 0;
 
-  constructor (private quizService: QuizService, private router: Router) {}
+  constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit(): void {
+    const savedAnswers = JSON.parse(localStorage.getItem("resultSet") || "[]");
+    this.selectedAnswersList = savedAnswers;
+
     this.getAllQuizList();
   }
 
+  isSelected(answerIndex: number): boolean {
+    return this.selectedAnswersList[this.currentQuestion] === answerIndex;
+  }
+
   onSelectOption(answerIndex: any) {
+    this.anserIndexSelected = answerIndex;
+
+    // Save the answer for the current question in the array
+    this.selectedAnswersList[this.currentQuestion] = answerIndex;
+
+    // Save to localStorage after every selection
+    localStorage.setItem("resultSet", JSON.stringify(this.selectedAnswersList));
+    localStorage.setItem("quizLength", (this.currentQuestion + 1).toString());
+
     this.selectedQuestion = [];
     this.currentQuestion += 1;
 
-    this.anserIndexSelected = answerIndex;
-
     if (this.quizModelList.length >= this.currentQuestion) {
-
       if (this.quizModelList.length > this.currentQuestion) {
         this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
+        // Restore selected answer for this question if exists
+        const savedAnswers = JSON.parse(localStorage.getItem("resultSet") || "[]");
+        this.anserIndexSelected = savedAnswers[this.currentQuestion] || 0;
       }
-
-      // this.currentQuestion += 1;
-      this.selectedAnswersList.push(answerIndex);
     }
 
-    if (this.selectedAnswersList.length === this.quizModelList.length) {
-      localStorage.setItem("resultSet", JSON.stringify(this.selectedAnswersList));
-      localStorage.setItem("quizLength", this.currentQuestion.toString());
-      this.router.navigate(['/app/results'])
+    if (this.selectedAnswersList.filter(a => a !== undefined).length === this.quizModelList.length) {
+      this.router.navigate(['/app/results']);
     }
   }
 
   onClickPrevButton() {
     this.selectedQuestion = [];
     this.currentQuestion -= 1;
-    this.selectedAnswersList.pop();
-
     this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
-
+    // Restore selected answer for this question if exists
+    const savedAnswers = JSON.parse(localStorage.getItem("resultSet") || "[]");
+    this.anserIndexSelected = savedAnswers[this.currentQuestion] || 0;
   }
-  
+
   getAllQuizList() {
     this.quizService.getQuizList().subscribe((resp: any) => {
       if (resp.code === 1) {

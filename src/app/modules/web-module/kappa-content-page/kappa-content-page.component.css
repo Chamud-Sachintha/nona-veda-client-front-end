@@ -9,6 +9,7 @@ body {
 
 h2, h1, p {
     color: #7D7D7D;
+    font-family: 'Roboto', sans-serif;
 }
 
 .vata-dominance, .pitta-dominance, .kapha-dominance {
@@ -50,10 +51,10 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .info-section {
@@ -97,6 +98,8 @@ body {
     color: #B7B49E;
     font-weight: 600;
     margin-bottom: 15px;
+    text-align: justify;
+    padding-right: 50px;
 }
 
 .kapha-description p {
@@ -104,6 +107,7 @@ body {
     line-height: 1.6;
     margin-bottom: 10px;
     color: #B7B49E;
+    padding-right: 50px;
 }
 
 .kapha-image {
@@ -165,7 +169,7 @@ body {
 
 }
 .trait img {
-    max-width: 50px;
+    /* max-width: 50px; */
     margin-bottom: 20px;
 }
 .trait p {
@@ -211,7 +215,6 @@ body {
 
 .after-parah1 {
     text-align: center;
-    color: #333; /* Dark text color for heading */
     margin-bottom: 40px;
 }
 

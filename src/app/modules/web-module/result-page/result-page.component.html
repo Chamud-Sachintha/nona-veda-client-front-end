@@ -15,28 +15,28 @@
                     <div class="row align-items-center">
                         <!-- Vata on the left -->
                         <div class="col-2 text-center">
-                            <h2>VATA</h2>
-                            <p>{{ this.vataPercentage | number:'1.2-2' }}%</p>
+                            <h2 style="color: #260E0A; font-size: 40px;">VATA</h2>
+                            <p style="color: #260E0A; font-size: 25px; font-weight: 600;">{{ this.vataPercentage | number:'1.2-2' }}%</p>
                         </div>
                         <!-- Kapha in the center -->
                         <div class="col-8">
                             <div class="row">
                                 <div class="col">
-                                    <h1 class="kapha-dominance">KAPHA</h1>
-                                    <p class="kapha-percentage">{{ this.kappaPercentage | number:'1.2-2' }}%</p>
+                                    <h1 class="kapha-dominance" style="color: #260E0A; font-size: 65px;">KAPHA</h1>
+                                    <p class="kapha-percentage" style="color: #260E0A; font-size: 30px; font-weight: 600;">{{ this.kappaPercentage | number:'1.2-2' }}%</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <img src="../../../../assets/images/EGERIE_RVB.png" alt="Kapha Portrait" class="img-fluid">
+                                    <img id="kappLogoEl" style="height: 100%; width: 450px;" alt="Kapha Portrait" class="img-fluid">
                                 </div>
                             </div>
                         </div>
                         <!-- Pitta on the right -->
                         <div class="col-2 text-center">
                             <div style="margin-left: -25px;">
-                                <h2>PITTA</h2>
-                                <p>{{ this.pittaPercentage | number:'1.2-2' }}%</p>
+                                <h2 style="color: #260E0A; font-size: 40px;">PITTA</h2>
+                                <p style="color: #260E0A; font-size: 25px; font-weight: 600;">{{ this.pittaPercentage | number:'1.2-2' }}%</p>
                             </div>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <img src="../../../../assets/images/EGERIE_RVB.png" alt="Pitta Portrait" class="img-fluid">
+                                    <img id="pittaLogoEl" style="height: 100%; width: 450px;" alt="Pitta Portrait" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -81,19 +81,19 @@
                         <!-- Pitta on the left -->
                         <div class="col-2 text-center">
                             <h2>PITTA</h2>
-                            <p>{{ this.pittaPercentage | number:'1.2-2' }}%</p>
+                            <p>{{ this.pittaPercentage | number:'1.0-0' }}%</p>
                         </div>
                         <!-- Vata in the center -->
                         <div class="col-8">
                             <div class="row">
                                 <div class="col">
                                     <h1 class="vata-dominance">VATA</h1>
-                                    <p class="vata-percentage">{{ this.vataPercentage | number:'1.2-2' }}%</p>
+                                    <p class="vata-percentage">{{ this.vataPercentage | number:'1.0-0' }}%</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <img src="../../../../assets/images/EGERIE_RVB.png" style="height: 100%; width: 450px;" alt="Vata Portrait" class="img-fluid">
+                                    <img id="vataLogoEl" style="height: 100%; width: 450px;" alt="Vata Portrait" class="img-fluid">
                                 </div>
                             </div>
                         </div>
@@ -101,7 +101,7 @@
                         <div class="col-2 text-center">
                             <div style="margin-left: -45px;">
                                 <h2>KAPHA</h2>
-                                <p>{{ this.kappaPercentage | number:'1.2-2' }}%</p>
+                                <p>{{ this.kappaPercentage | number:'1.0-0' }}%</p>
                             </div>
                         </div>
                     </div>

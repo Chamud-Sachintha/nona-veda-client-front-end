@@ -14,8 +14,7 @@
                 </div>
                 <div class="col-12">
                     <div class="row mb-3" style="justify-content: center;" *ngFor="let eachAnswer of eachQuiz.answers; index as i">
-                        <div class="col-8" style="background-color:  #260E0A; padding-top: 9px; padding-bottom: 9px; color: white; font-size: 18px;">
-                            <input type="checkbox" class="form-check-input me-2" style="background-color: grey;" (change)="onSelectOption(i + 1)">
+                        <div class="col-8 text-center" [ngClass]="{'custom-bg-dark text-white': isSelected(i + 1)}" style="padding-top: 14px; padding-bottom: 14px; color: #260E0A; font-size: 20px; border: 3px solid #260E0A;" (click)="onSelectOption(i + 1)">
                             {{ eachAnswer }}
                         </div>
                     </div>
@@ -24,7 +23,7 @@
                     <label for="">{{ currentQuestion + 1 }} / {{ this.quizModelList.length }}</label>
                 </div>
                 <div class="col-12 text-center mt-3" *ngIf="this.currentQuestion >= 1" >
-                    <button class="btn btn-primary btn-sm" style="background-color: #260E0A;" (click)="onClickPrevButton()">Previous</button>
+                    <button class="btn btn-primary btn-sm" style="background-color: #260E0A; border: none; border-radius: 0; padding: 5px 12px 6px 12px;" (click)="onClickPrevButton()">précedent</button>
                 </div>
             </div>
         </div>

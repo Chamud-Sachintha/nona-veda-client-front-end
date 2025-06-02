@@ -110,3 +110,15 @@
     padding: 10px;
   }
 }
+
+.custom-input:focus {
+  border-color: #c16a4c !important;
+  outline: none;
+  background-color: #ffe5b4 !important;
+}
+
+.custom-select:focus {
+  border-color: #c16a4c !important;
+  background-color: #ffe5b4 !important; /* Light orange */
+  outline: none;
+}

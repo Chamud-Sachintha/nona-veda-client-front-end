@@ -107,26 +107,41 @@ export class ResultPageComponent implements OnInit {
     if (this.isPittaDominant) {
       if (getBgEl) {
         // getBgEl.style.backgroundImage = 'url("../../../../assets/images/pitta_2.jpg")';
-        getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/pitta_2.jpg")';
+        getBgEl.style.backgroundImage = 'linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("../../../../assets/images/pitta_2.jpg")';
         getBgEl.style.backgroundSize = 'cover';
         getBgEl.style.backgroundPosition = 'center';
+
+        var getLogoEl = document.getElementById("pittaLogoEl") as HTMLImageElement;
+        if (getLogoEl) {
+            getLogoEl.src = '../../../../assets/images/pitta_logo.png';
+        }
 
         this.currentIndex = 1;
       }
     } else if (this.isVataDominant) {
       if (getBgEl) {
         // getBgEl.style.backgroundImage = 'url("../../../../assets/images/vata_2.jpg")';
-        getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/vata_1.jpg")';
+        getBgEl.style.backgroundImage = 'linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),url("../../../../assets/images/vata_1.jpg")';
         getBgEl.style.backgroundSize = 'cover';
         getBgEl.style.backgroundPosition = 'center';
+
+        var getLogoEl = document.getElementById("vataLogoEl") as HTMLImageElement;
+        if (getLogoEl) {
+            getLogoEl.src = '../../../../assets/images/pitta_logo.png';
+        }
 
         this.currentIndex = 0;
       }
     } else {
       // getBgEl.style.backgroundImage = 'url("../../../../assets/images/kappa_2.jpg")';
-      getBgEl.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../../assets/images/kappa_2.jpg")';
+      getBgEl.style.backgroundImage = 'linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),url("../../../../assets/images/kappa_2.jpg")';
       getBgEl.style.backgroundSize = 'cover';
       getBgEl.style.backgroundPosition = 'center';
+
+      var getLogoEl = document.getElementById("kappLogoEl") as HTMLImageElement;
+      if (getLogoEl) {
+          getLogoEl.src = '../../../../assets/images/kappa_logo.png';
+      }
 
       this.currentIndex = 2;
     }
@@ -141,7 +156,7 @@ export class ResultPageComponent implements OnInit {
     window.addEventListener('scroll', this.toggleBackToTop.bind(this));
     this.backToTopButton.addEventListener('click', this.scrollToTop.bind(this));
 
-    // this.submitQuizresponse();
+    this.submitQuizresponse();
   }
 
   toggleBackToTop() {

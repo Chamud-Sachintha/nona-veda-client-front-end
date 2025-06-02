@@ -1,5 +1,6 @@
 h1 {
     color: white;
+    font-weight: 300;
 }
 
 h2 {
@@ -8,6 +9,10 @@ h2 {
 
 p {
     color: white;
+}
+
+* {
+    font-family: "Cormorant Garamond", serif;
 }
 
 /* Back to top button */
