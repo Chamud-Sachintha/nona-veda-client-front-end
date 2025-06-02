@@ -12,7 +12,7 @@ interface BlogPost {
 }
 
 @Component({
-    selector: 'app-app-corousal-component-2',
+    selector: 'app-app-corousal-component-3',
     standalone: true,
     imports: [CommonModule],
     templateUrl: './app-corousal-component-3.component.html',

@@ -47,6 +47,12 @@ export class ResultPageComponent implements OnInit {
     { name: 'Kapha', image: '../../../../assets/images/kappa_2.jpg', index:2 }
   ];
 
+  dominantTypeLogo = [
+    { name: 'Vata', image: '../../../../assets/images/vata_logo.png', index: 0 },
+    { name: 'Pitta', image: '../../../../assets/images/pitta_logo.png', index: 1 },
+    { name: 'Kapha', image: '../../../../assets/images/kappa_logo.png', index:2 }
+  ];
+
   backToTopButton:any = null;
 
   // HostListener:('window:scroll', [])
@@ -127,7 +133,7 @@ export class ResultPageComponent implements OnInit {
 
         var getLogoEl = document.getElementById("vataLogoEl") as HTMLImageElement;
         if (getLogoEl) {
-            getLogoEl.src = '../../../../assets/images/pitta_logo.png';
+            getLogoEl.src = '../../../../assets/images/vata_logo.png';
         }
 
         this.currentIndex = 0;
@@ -176,6 +182,7 @@ export class ResultPageComponent implements OnInit {
 
   onClickPrevSlide() {
     const getBgEl = document.getElementById("bg");
+    var getLogoEl = null;
   
     if (!getBgEl) {
       console.error("Background element not found");
@@ -183,16 +190,25 @@ export class ResultPageComponent implements OnInit {
     }
 
     if (this.showKappa) {
+
+      getLogoEl = document.getElementById("vataLogoEl") as HTMLImageElement;
+
       this.showKappa = false;
       this.showVata = true;
 
       this.currentIndex = 0;
     } else if (this.showPitta) {
+
+      getLogoEl = document.getElementById("kappLogoEl") as HTMLImageElement;
+
       this.showPitta = false;
       this.showKappa = true;
 
       this.currentIndex = 2;
     } else {
+
+      getLogoEl = document.getElementById("pittaLogoEl") as HTMLImageElement;
+
       this.showVata = false;
       this.showPitta = true;
 
@@ -200,13 +216,15 @@ export class ResultPageComponent implements OnInit {
     }
 
     const currentType = this.dominantTypes[this.currentIndex];
-    this.setBackground(getBgEl, currentType.image);
+    const dominantLogo = this.dominantTypeLogo[this.currentIndex];
+    this.setBackground(getBgEl, currentType.image, dominantLogo.image, getLogoEl);
 
     this.currentIndex = (this.currentIndex + 1) % this.dominantTypes.length;
   }
 
   onClickNextSlide() {
     const getBgEl = document.getElementById("bg");
+    var getLogoEl = null;
   
     if (!getBgEl) {
       console.error("Background element not found");
@@ -214,16 +232,25 @@ export class ResultPageComponent implements OnInit {
     }
 
     if (this.showKappa) {
+
+      getLogoEl = document.getElementById("pittaLogoEl") as HTMLImageElement;
+
       this.showPitta = true;
       this.showKappa = false;
 
       this.currentIndex = 1;
     } else if (this.showPitta) {
+
+      getLogoEl = document.getElementById("vataLogoEl") as HTMLImageElement;
+
       this.showPitta = false;
       this.showVata = true;
 
       this.currentIndex = 0;
     } else {
+
+      getLogoEl = document.getElementById("kappLogoEl") as HTMLImageElement;
+
       this.showVata = false;
       this.showKappa = true;
 
@@ -231,16 +258,19 @@ export class ResultPageComponent implements OnInit {
     }
     
     const currentType = this.dominantTypes[this.currentIndex];
-    this.setBackground(getBgEl, currentType.image);
+    const dominantLogo = this.dominantTypeLogo[this.currentIndex];
+    this.setBackground(getBgEl, currentType.image, dominantLogo.image, getLogoEl);
 
     this.currentIndex = (this.currentIndex + 1) % this.dominantTypes.length;
   }
   
   // Helper method to set the background style
-  setBackground(element: HTMLElement, imageUrl: string) {
-    element.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("${imageUrl}")`;
+  setBackground(element: HTMLElement, imageUrl: string, dominantLogo: string, logoEl: any) {
+    element.style.backgroundImage = `linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url("${imageUrl}")`;
     element.style.backgroundSize = 'cover';
     element.style.backgroundPosition = 'center';
+
+    logoEl.src = dominantLogo;
   }
 
   submitQuizresponse() {

@@ -9,6 +9,7 @@ body {
 
 h2, h1, p {
     color: #7D7D7D;
+    font-family: 'Roboto', sans-serif;
 }
 
 .vata-dominance, .pitta-dominance, .kapha-dominance {
@@ -160,11 +161,12 @@ body {
     .trait-border {
         border-right: transparent;
         border-bottom: 1px solid white;
+        
     }
 
 }
 .trait img {
-    max-width: 50px;
+    /* max-width: 50px; */
     margin-bottom: 20px;
 }
 .trait p {

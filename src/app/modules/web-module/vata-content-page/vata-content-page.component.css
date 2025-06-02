@@ -170,7 +170,7 @@ body {
 
 }
 .trait img {
-    max-width: 50px;
+    /* max-width: 50px; */
     margin-bottom: 20px;
 }
 .trait p {
