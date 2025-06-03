@@ -34,14 +34,14 @@ export class AppCorousalComponent3Component implements OnInit,OnDestroy {
             id: 1,
             title: 'Santé',
             description: 'Les personnes Kapha ont un métabolisme lent, ce qui peut entraîner une prise de poids, une léthargie, et des troubles respiratoires. Elles sont aussi sujettes à la rétention d\'eau et aux congestions. Pour rester en bonne santé, les Kapha doivent pratiquer une activité physique régulière, consommer des aliments légers et épicés, et éviter la suralimentation et la sédentarité.',
-            image: '../../../../assets/images/sante.jpg',
+            image: '../../../../assets/images/slide/Santé.png',
             link: '/blog/ashwagandha'
         },
         {
             id: 2,
             title: 'Mode de vie',
             description: 'Pour équilibrer Kapha, il est crucial de rester au chaud en portant des vêtements appropriés et en consommant des aliments réchauffants. Changer de routine aide à combattre la léthargie et la démotivation. Un sommeil régulier, avec un coucher entre 23h et minuit et un réveil entre 6h et 7h, permet de maintenir des niveaux d\'énergie optimaux. Le jeûne occasionnel peut aider à éliminer la lourdeur et à stimuler l\'appétit. L\'exercice régulier et le yoga Kapha, avec des postures spécifiques comme Natarajasana et Ustrasana, dans une ambiance apaisante, sont des actions efficaces pour équilibrer Kapha.',
-            image: '../../../../assets/images/mod.jpg',
+            image: '../../../../assets/images/slide/Mode de vie.png',
             link: '/blog/turmeric'
         },
         {
@@ -55,14 +55,21 @@ export class AppCorousalComponent3Component implements OnInit,OnDestroy {
             id: 4,
             title: 'Alimentation',
             description: 'Privilégiez des repas chauds, légers et secs, de préférence épicés, comme les cuisines mexicaine ou indienne. Les aliments légèrement cuits ou crus, ainsi que les méthodes de cuisson à sec comme le grillage ou la cuisson au four, sont idéaux. Pour stimuler votre appétit, la laitue romaine, la chicorée, et les épices comme le cumin et le curcuma sont recommandés. Il est conseillé d\'éviter les aliments sucrés, acides, salés, ainsi que les aliments surgelés et l\'eau froide. Un régime pauvre en glucides et en graisses est également favorable pour les Kaphas.',
-            image: '../../../../assets/images/alimentation.jpg',
+            image: '../../../../assets/images/slide/Alimentation.png',
             link: '/blog/triphala'
         },
         {
             id: 5,
+            title: 'Digestion',
+            description: 'Les personnes de type Kapha ont un appétit stable, mais une digestion lente, ce qui peut les amener à trop manger, parfois sous l\'effet des émotions. Leur métabolisme est également lent, et elles ressentent facilement la soif après un effort physique. Elles prennent plaisir à savourer chaque repas. En général, leur système digestif est bien lubrifié, ce qui favorise des selles régulières, bien formées et légèrement grasses, reflétant une bonne santé intestinale.',
+            image: '../../../../assets/images/slide/Digestion.png',
+            link: '/blog/triphala'
+        },
+        {
+            id: 6,
             title: 'Physique',
             description: 'Vous avez un corps solide, bien bâti, avec une ossature robuste et une musculature développée. Votre peau est souvent douce et bien hydratée, vos cheveux sont épais et brillants. Vous pouvez prendre du poids assez facilement.',
-            image: '../../../../assets/images/phisi.jpg',
+            image: '../../../../assets/images/slide/Physique.png',
             link: '/blog/daily-routine'
         }
     ];
