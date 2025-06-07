@@ -30,7 +30,7 @@ export class ResultPageComponent implements OnInit {
   showKappa = false;
 
   vataAnswerCount = 0;
-  pittaAnswerCount = 0;
+  pittaAnswerCount = 0; 
   kappaAnswerCount = 0;
 
   vataPercentage = 0;
@@ -62,7 +62,7 @@ export class ResultPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.selectedAnswerList = localStorage.getItem("resultSet");
+    this.selectedAnswerList = localStorage.getItem("tmpResults");
     this.quizLength = localStorage.getItem("quizLength");
     var getBgEl: any = document.getElementById("bg");
 

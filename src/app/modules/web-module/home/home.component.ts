@@ -35,6 +35,35 @@ export class HomeComponent implements OnInit {
     return this.selectedAnswersList[this.currentQuestion] === answerIndex;
   }
 
+  // onSelectOption(answerIndex: any) {
+
+  //   this.anserIndexSelected = answerIndex;
+
+  //   // Save the answer for the current question in the array
+  //   this.selectedAnswersList[this.currentQuestion] = answerIndex;
+
+  //   // Save to localStorage after every selection
+  //   localStorage.setItem("resultSet", JSON.stringify(this.selectedAnswersList));
+  //   localStorage.setItem("quizLength", (this.currentQuestion + 1).toString());
+
+  //   this.selectedQuestion = [];
+  //   this.currentQuestion += 1;
+
+  //   if (this.quizModelList.length >= this.currentQuestion) {
+  //     if (this.quizModelList.length > this.currentQuestion) {
+  //       this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
+  //       // Restore selected answer for this question if exists
+  //       const savedAnswers = JSON.parse(localStorage.getItem("resultSet") || "[]");
+  //       this.anserIndexSelected = savedAnswers[this.currentQuestion] || 0;
+  //     }
+  //   }
+
+  //   if (this.selectedAnswersList.filter(a => a !== undefined).length === this.quizModelList.length) {
+  //     this.router.navigate(['/app/results']);
+  //   }
+
+  // }
+
   onSelectOption(answerIndex: any) {
     this.anserIndexSelected = answerIndex;
 
@@ -51,16 +80,22 @@ export class HomeComponent implements OnInit {
     if (this.quizModelList.length >= this.currentQuestion) {
       if (this.quizModelList.length > this.currentQuestion) {
         this.selectedQuestion.push(this.quizModelList[this.currentQuestion]);
+
         // Restore selected answer for this question if exists
         const savedAnswers = JSON.parse(localStorage.getItem("resultSet") || "[]");
         this.anserIndexSelected = savedAnswers[this.currentQuestion] || 0;
       }
     }
 
+    // ✅ Check if all answers are selected (final question answered)
     if (this.selectedAnswersList.filter(a => a !== undefined).length === this.quizModelList.length) {
+      var tmpResults = localStorage.getItem("resultSet");
+      localStorage.removeItem("resultSet") // ✅ Clear localStorage here
+      localStorage.setItem("tmpResults", tmpResults ? tmpResults : "[]");
       this.router.navigate(['/app/results']);
     }
   }
+
 
   onClickPrevButton() {
     this.selectedQuestion = [];
