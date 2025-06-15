@@ -52,7 +52,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     /* padding: 20px; */
 }
@@ -136,7 +136,7 @@ body {
 /* 2 sextion */
 
 .container-tty {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 50px;
     background-color: #B7B49E;

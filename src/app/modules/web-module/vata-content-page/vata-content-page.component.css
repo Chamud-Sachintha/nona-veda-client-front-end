@@ -51,7 +51,7 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -110,6 +110,7 @@ body {
     line-height: 1.6;
     margin-bottom: 10px;
     color: #666;
+    padding-right: 45px;
 }
 
 .kapha-image {
@@ -137,7 +138,7 @@ body {
 /* 2 sextion */
 
 .container-tty {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 50px;
     background-color: #260E0A;
